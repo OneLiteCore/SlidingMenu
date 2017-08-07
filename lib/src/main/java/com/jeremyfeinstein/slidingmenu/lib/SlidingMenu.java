@@ -204,10 +204,10 @@ public class SlidingMenu extends RelativeLayout {
         super(context, attrs, defStyle);
 
         LayoutParams behindParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        mViewBehind = new CustomViewBehind(context);
+        mViewBehind = onCreateViewBehind(context);
         addView(mViewBehind, behindParams);
         LayoutParams aboveParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-        mViewAbove = new CustomViewAbove(context);
+        mViewAbove = onCreateViewAbove(context);
         addView(mViewAbove, aboveParams);
         // register the CustomViewBehind with the CustomViewAbove
         mViewAbove.setCustomViewBehind(mViewBehind);
@@ -283,6 +283,14 @@ public class SlidingMenu extends RelativeLayout {
         if (selectorRes != -1)
             setSelectorDrawable(selectorRes);
         ta.recycle();
+    }
+
+    protected CustomViewAbove onCreateViewAbove(Context context) {
+        return new CustomViewAbove(context);
+    }
+
+    protected CustomViewBehind onCreateViewBehind(Context context) {
+        return new CustomViewBehind(context);
     }
 
     /**
