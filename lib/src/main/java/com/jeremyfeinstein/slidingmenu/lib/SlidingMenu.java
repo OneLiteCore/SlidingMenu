@@ -24,11 +24,11 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import core.widget.slidingmenu.R;
-
 import com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove.OnPageChangeListener;
 
 import java.lang.reflect.Method;
+
+import core.widget.slidingmenu.R;
 
 public class SlidingMenu extends RelativeLayout {
 
@@ -1005,15 +1005,15 @@ public class SlidingMenu extends RelativeLayout {
     @SuppressLint("NewApi")
     @Override
     protected boolean fitSystemWindows(Rect insets) {
-        int leftPadding = insets.left;
-        int rightPadding = insets.right;
-        int topPadding = insets.top;
-        int bottomPadding = insets.bottom;
         if (!mActionbarOverlay) {
+            int leftPadding = insets.left;
+            int rightPadding = insets.right;
+            int topPadding = insets.top;
+            int bottomPadding = insets.bottom;
             Log.v(TAG, "setting padding!");
             setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
         }
-        return true;
+        return super.fitSystemWindows(insets);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
