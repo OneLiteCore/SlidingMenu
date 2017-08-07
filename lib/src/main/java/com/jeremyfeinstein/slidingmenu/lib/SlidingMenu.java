@@ -77,7 +77,7 @@ public class SlidingMenu extends RelativeLayout {
 
     private OnOpenListener mOpenListener;
 
-    private OnOpenListener mSecondaryOpenListner;
+    private OnOpenListener mSecondaryOpenListener;
 
     private OnCloseListener mCloseListener;
 
@@ -226,8 +226,8 @@ public class SlidingMenu extends RelativeLayout {
                     mOpenListener.onOpen();
                 } else if (position == POSITION_CLOSE && mCloseListener != null) {
                     mCloseListener.onClose();
-                } else if (position == POSITION_SECONDARY_OPEN && mSecondaryOpenListner != null) {
-                    mSecondaryOpenListner.onOpen();
+                } else if (position == POSITION_SECONDARY_OPEN && mSecondaryOpenListener != null) {
+                    mSecondaryOpenListener.onOpen();
                 }
             }
         });
@@ -909,7 +909,7 @@ public class SlidingMenu extends RelativeLayout {
      */
 
     public void setSecondaryOnOpenListner(OnOpenListener listener) {
-        mSecondaryOpenListner = listener;
+        mSecondaryOpenListener = listener;
     }
 
     /**
