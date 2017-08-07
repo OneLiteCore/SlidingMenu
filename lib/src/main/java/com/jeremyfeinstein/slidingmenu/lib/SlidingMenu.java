@@ -1012,6 +1012,7 @@ public class SlidingMenu extends RelativeLayout {
             int bottomPadding = insets.bottom;
             Log.v(TAG, "setting padding!");
             setPadding(leftPadding, topPadding, rightPadding, bottomPadding);
+            return true;
         }
         return super.fitSystemWindows(insets);
     }
