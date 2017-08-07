@@ -22,4 +22,8 @@ target/
 *.iml
 gradle.properties
 local.properties
+build/
 lib/build
+*.cmd
+app/build
+.gradle/

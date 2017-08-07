@@ -1,0 +1,22 @@
+apply plugin: 'bintray-release'
+
+static def gitVersionCode() {
+    def cmd = 'git rev-list HEAD --first-parent --count'
+    cmd.execute().text.trim().toInteger()
+}
+
+ext {
+    verCode = gitVersionCode()
+    verName = "1.0.0"
+}
+
+publish {
+    artifactId = 'slidingmenu'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    uploadName = rootProject.uploadName
+    publishVersion = verName
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
+}
