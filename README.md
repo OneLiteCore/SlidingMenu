@@ -7,13 +7,14 @@ What is different between the original is here:
 __1.__ Delete `com.jeremyfeinstein.slidingmenu.lib.app` package.  
 __2.__ Add `actionbarOverlayEnable` attr to let you control it in xml.  
 __3.__ Add `shadow` and `shadowright` drawable.
+__4.__ Fix `KeyEventCompat` issue.
 
 # Setup
 
 Add dependency in you module build.gradle:
 
 ```gradle
-compile 'core.mate:slidingmenu:1.0.0'
+implementation 'core.mate:slidingmenu:1.0.1'
 ```
 
 # How to Integrate this Library into Your Projects

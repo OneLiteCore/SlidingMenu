@@ -2,12 +2,13 @@ apply plugin: 'com.android.library'
 apply from: './maven.gradle'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion '26.0.1'
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 9
-        targetSdkVersion 26
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
         versionCode verCode
         versionName verName
     }
@@ -17,5 +18,5 @@ android {
 }
 
 dependencies {
-    provided 'com.android.support:support-v4:25.3.1'
+    compileOnly "com.android.support:support-v4:$rootProject.supportLibVersion"
 }
