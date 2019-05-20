@@ -6,7 +6,7 @@ What is different between the original is here:
 
 __1.__ Delete `com.jeremyfeinstein.slidingmenu.lib.app` package.  
 __2.__ Add `actionbarOverlayEnable` attr to let you control it in xml.  
-__3.__ Add `shadow` and `shadowright` drawable.
+__3.__ Add `shadow` and `shadowright` drawable.  
 __4.__ Fix `KeyEventCompat` issue.
 
 # Setup
