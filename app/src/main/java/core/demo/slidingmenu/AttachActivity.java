@@ -18,13 +18,6 @@ public class AttachActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            Window win = getWindow();
-            win.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            win.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        }
-
         setContentView(R.layout.content);
 
         SlidingMenu slidingMenu = new SlidingMenu(this);

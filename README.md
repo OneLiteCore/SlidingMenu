@@ -14,7 +14,7 @@ __4.__ Fix `KeyEventCompat` issue.
 Add dependency in you module build.gradle:
 
 ```gradle
-implementation 'core.mate:slidingmenu:1.0.1'
+implementation 'core.mate:slidingmenu:1.0.2'
 ```
 
 # How to Integrate this Library into Your Projects
