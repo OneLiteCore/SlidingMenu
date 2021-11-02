@@ -1,10 +1,8 @@
 package core.demo.slidingmenu;
 
-import android.os.Build;
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.Window;
-import android.view.WindowManager;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -21,11 +19,11 @@ public class AttachActivity extends AppCompatActivity {
         setContentView(R.layout.content);
 
         SlidingMenu slidingMenu = new SlidingMenu(this);
-        slidingMenu.setMode(SlidingMenu.RIGHT);
+        slidingMenu.setRelativeMode(SlidingMenu.RIGHT);
+        slidingMenu.setRelativeShadow();
         slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
         slidingMenu.setBehindWidthRes(R.dimen.menu_width);
         slidingMenu.setFadeEnabled(false);
-        slidingMenu.setShadowDrawable(R.drawable.shadowright);
         slidingMenu.setShadowWidthRes(R.dimen.shadow_width);
         slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT, true);
         slidingMenu.setMenu(R.layout.menu);

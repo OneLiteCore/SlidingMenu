@@ -24,9 +24,13 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
+import androidx.core.text.TextUtilsCompat;
+import androidx.core.view.ViewCompat;
+
 import com.jeremyfeinstein.slidingmenu.lib.CustomViewAbove.OnPageChangeListener;
 
 import java.lang.reflect.Method;
+import java.util.Locale;
 
 import core.widget.slidingmenu.R;
 
@@ -1038,4 +1042,27 @@ public class SlidingMenu extends RelativeLayout {
         }
     }
 
+    /*RTL support*/
+
+    public void setRelativeMode(int mode) {
+        boolean isRtl = TextUtilsCompat.getLayoutDirectionFromLocale(Locale.getDefault()) == ViewCompat.LAYOUT_DIRECTION_RTL;
+        setRelativeMode(mode, isRtl);
+    }
+
+    public void setRelativeMode(int mode, boolean isRtl) {
+        if (isRtl && mode == LEFT) {
+            mode = RIGHT;
+        } else if (isRtl && mode == RIGHT) {
+            mode = LEFT;
+        }
+        setMode(mode);
+    }
+
+    public void setRelativeShadow() {
+        if (getMode() == LEFT) {
+            setShadowDrawable(R.drawable.shadow_rtl);
+        } else {
+            setShadowDrawable(R.drawable.shadow_ltr);
+        }
+    }
 }

@@ -2,13 +2,14 @@
 <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sliding_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:actionbarOverlayEnable="true"
     app:behindWidth="240dp"
     app:mode="right"
-    app:shadowDrawable="@drawable/shadowright"
+    app:shadowDrawable="@drawable/shadow_ltr"
     app:shadowWidth="@dimen/shadow_width"
     app:touchModeAbove="fullscreen"
     app:viewAbove="@layout/content"
-    app:viewBehind="@layout/menu"/>
+    app:viewBehind="@layout/menu" />
